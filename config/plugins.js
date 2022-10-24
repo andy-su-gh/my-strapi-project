@@ -18,8 +18,40 @@ module.exports = {
       ],
     },
   },
-  'upload-aws-s3': {
-    enabled: true,
-    resolve: './src/plugins/preview-button' // path to plugin folder
+
+  // works config
+  // upload: {
+  //   config: {
+  //     provider: 'aws-s3',
+  //     providerOptions: {
+  //       accessKeyId: 'AKIAY3SFP2NDCMKAWCU2', // env('AWS_ACCESS_KEY_ID'),
+  //       secretAccessKey: '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', // env('AWS_ACCESS_SECRET'),
+  //       region: 'ap-northeast-1', // env('AWS_REGION'),
+  //       params: {
+  //         Bucket: 'ofe-cms-media-library', // env('AWS_BUCKET'),
+  //       },
+  //     },
+  //     actionOptions: {
+  //       upload: {},
+  //       uploadStream: {},
+  //       delete: {},
+  //     },
+  //   },
+  // },
+
+  upload: {
+    config: {
+      provider: 'aws-s3-iam',
+      providerOptions: {
+        region: 'ap-northeast-1', // env('AWS_REGION'),
+        bucket: 'ofe-cms-media-library',
+        // accessKeyId: 'AKIAY3SFP2NDCMKAWCU2', // env('AWS_ACCESS_KEY_ID'),
+        // secretAccessKey: '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', // env('AWS_ACCESS_SECRET'),
+        RoleName: 'lambda-s3-role',
+        params: {
+          Bucket: 'ofe-cms-media-library', // env('AWS_BUCKET'),
+        },
+      },
+    }
   },
 };

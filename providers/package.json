@@ -1,0 +1,18 @@
+{
+  "name": "strapi-provider-upload-aws-s3-iam",
+  "version": "1.0.0",
+  "maintainers": [
+    "my-email.domain.com"
+  ],
+  "description": "aws s3 iam upload provider for strapi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "2.1215.0",
+    "lodash": "4.17.21"
+  }
+}
